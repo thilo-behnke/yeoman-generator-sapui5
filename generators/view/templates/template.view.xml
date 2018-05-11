@@ -1,0 +1,12 @@
+<core:View
+        xmlns:core="sap.ui.core"
+        xmlns="sap.m"
+        xmlns:f="sap.ui.layout.form"
+        xmlns:l="sap.ui.layout"
+        controllerName="zss18_t1_web_frontend<%= path %>.<%= viewName %>">
+    <l:VerticalLayout
+            class="sapUiContentPadding"
+            id="ReservationFormVertical"
+            width="100%">
+    </l:VerticalLayout>
+</core:View>
