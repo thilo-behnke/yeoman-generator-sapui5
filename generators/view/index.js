@@ -6,8 +6,9 @@ const SAP_PATHS = {
 };
 
 const LIB_PATHS = {
-  momentjs: 'WebContent/lib/moment',
-  rxjs: 'WebContent/lib/rx.all'
+    momentjs: 'WebContent/lib/moment',
+    ramdajs: 'WebContent/lib/ramda.min',
+    rxjs: 'WebContent/lib/rx.all'
 };
 
 module.exports = class extends Generator {
@@ -35,6 +36,7 @@ module.exports = class extends Generator {
             choices: Object.keys(SAP_PATHS),
             default: []
         }]).then(answers => {
+            this.log(pjson);
             Object.assign(this, answers);
         });
     }
