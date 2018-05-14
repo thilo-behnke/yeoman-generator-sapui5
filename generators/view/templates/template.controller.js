@@ -1,14 +1,19 @@
 const libs = '<%= libraries %>'.split(',');
 const comps = '<%= comps %>'.split(',');
 
+const importNames = [...comps, ...libs].map(x => x.split('/').map(y => y.split('.')[0]).pop());
+
 sap.ui.define([
         'sap/ui/core/mvc/Controller',
+        'WebContent/zss18_t1_web_frontend/utils/base',
         ...comps,
-        ...libs,
+        ...libs
     ], (function () {
         'use strict';
 
-        return function (Controller, ...[comps, libs]) {
+        return function (Controller, BaseUtils, ...imports) {
+
+            imports = BaseUtils.nameMapper(imports, importNames);
 
             return Controller.extend('zss18_t1_web_frontend<%= path %>.<%= viewName %>', {
 

@@ -35,10 +35,7 @@ module.exports = class extends Generator {
             message: 'Select the SapUI5 components you need',
             choices: Object.keys(SAP_PATHS),
             default: []
-        }]).then(answers => {
-            this.log(pjson);
-            Object.assign(this, answers);
-        });
+        }]).then(answers => Object.assign(this, answers));
     }
 
     writing() {
