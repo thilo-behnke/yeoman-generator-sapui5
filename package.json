@@ -9,6 +9,7 @@
     "yeoman-generator"
   ],
   "dependencies": {
+    "ejs-lint": "^0.3.0",
     "yeoman-generator": "^1.0.0"
   }
 }
