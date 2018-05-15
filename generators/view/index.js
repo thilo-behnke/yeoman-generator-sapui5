@@ -45,7 +45,7 @@ module.exports = class extends Generator {
             {viewName: this.viewName, path: `.${this.path}`}
         );
         this.fs.copyTpl(
-            this.templatePath('template.controller.js'),
+            this.templatePath('template.controller.ejs'),
             this.destinationPath(`WebContent/zss18_t1_web_frontend/${this.path}/${this.viewName}.controller.js`),
             {
                 viewName: this.viewName,

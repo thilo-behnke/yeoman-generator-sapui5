@@ -1,19 +1,16 @@
-const libs = '<%= libraries %>'.split(',');
-const comps = '<%= comps %>'.split(',');
-
-const importNames = [...comps, ...libs].map(x => x.split('/').map(y => y.split('.')[0]).pop());
-
 sap.ui.define([
-        'sap/ui/core/mvc/Controller',
-        'WebContent/zss18_t1_web_frontend/utils/base',
-        ...comps,
-        ...libs
+    'sap/ui/core/mvc/Controller',
+    'WebContent/zss18_t1_web_frontend/utils/base'<% if (comps.concat(libraries).length > 0) { %>, <% } %>
+<% for(const i in comps) { -%>
+    '<%= comps[i] %>'<% if (i < comps.length - 1 || libraries.length > 0) { %>, <% } %>
+<% } -%>
+<%_ for(const i in libraries) { -%>
+    '<%= libraries[i] %>'<% if (i < libraries.length - 1) { %>, <% } %>
+<% } -%>
     ], (function () {
         'use strict';
 
-        return function (Controller, BaseUtils, ...imports) {
-
-            imports = BaseUtils.nameMapper(imports, importNames);
+        return function (Controller<% for(const i in comps) { %><%= ',' %> <%= comps[i].split('/').pop().split('.')[0] %><% } %>) {
 
             return Controller.extend('zss18_t1_web_frontend<%= path %>.<%= viewName %>', {
 
