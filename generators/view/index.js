@@ -2,7 +2,9 @@ var Generator = require('yeoman-generator');
 
 const SAP_PATHS = {
     MessageToast: 'sap/m/MessageToast',
-    MessageBox: 'sap/m/MessageBox'
+    MessageBox: 'sap/m/MessageBox',
+    JSONModel: 'sap/ui/model/json/JSONModel',
+    oDataModel: 'sap/ui/model/odata/v4/ODataModel'
 };
 
 const LIB_PATHS = {

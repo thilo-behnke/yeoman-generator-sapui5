@@ -1,6 +1,5 @@
 sap.ui.define([
-    'sap/ui/core/mvc/Controller',
-    'WebContent/zss18_t1_web_frontend/utils/base'<% if (comps.concat(libraries).length > 0) { %>, <% } %>
+    'sap/ui/core/mvc/Controller'<% if (comps.concat(libraries).length > 0) { %>, <% } %>
 <% for(const i in comps) { -%>
     '<%= comps[i] %>'<% if (i < comps.length - 1 || libraries.length > 0) { %>, <% } %>
 <% } -%>
