@@ -10,7 +10,8 @@ const SAP_PATHS = {
 const LIB_PATHS = {
     momentjs: 'WebContent/lib/moment',
     ramdajs: 'WebContent/lib/ramda.min',
-    rxjs: 'WebContent/lib/rx.all'
+    rxjs: 'WebContent/lib/rx.all',
+    lodash: 'WebContent/lib/lodash.min'
 };
 
 module.exports = class extends Generator {
